@@ -26,3 +26,5 @@ The JWT is sent in an HTTP-only cookie and also accepted as `Authorization: Bear
    - `JWT_SECRET` – 32+ random chars (generate with the command in `.env.example`)
    - `DATABASE_URL` – your Postgres connection string
 4. Redeploy (env changes only apply to new deployments). The `users` table is created automatically.
+
+Working Link - https://jwt-auth-app-drab-tau.vercel.app/
