@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign in · JWT Auth</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="brand">
+      <h1>Vault</h1>
+      <p>Sign in to see data that only logged-in users can load.</p>
+    </header>
+
+    <!-- Logged-out view -->
+    <section id="auth-view" class="panel">
+      <div class="tabs" role="tablist">
+        <button id="tab-login" role="tab" aria-selected="true" class="tab active">Log in</button>
+        <button id="tab-register" role="tab" aria-selected="false" class="tab">Create account</button>
+      </div>
+
+      <div id="message" class="message" role="alert" hidden></div>
+
+      <form id="login-form" novalidate>
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>Password
+          <input type="password" name="password" autocomplete="current-password" required />
+        </label>
+        <button type="submit" class="primary">Log in</button>
+      </form>
+
+      <form id="register-form" novalidate hidden>
+        <label>Name
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>Password
+          <input type="password" name="password" autocomplete="new-password" required />
+          <small>8–72 characters, with at least one letter and one number.</small>
+        </label>
+        <button type="submit" class="primary">Create account</button>
+      </form>
+    </section>
+
+    <!-- Logged-in view -->
+    <section id="app-view" class="panel" hidden>
+      <h2 id="welcome"></h2>
+      <p class="muted" id="session-info"></p>
+      <button id="fetch-protected" class="primary">Load protected data</button>
+      <pre id="protected-output" hidden></pre>
+      <button id="logout" class="ghost">Log out</button>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
